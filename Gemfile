@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 gem 'devise', '3.0.3'
+gem 'protected_attributes'
 gem 'mustache-js-rails', '~> 0.0.5'
 gem 'sqlite3'
 gem 'rails-i18n'

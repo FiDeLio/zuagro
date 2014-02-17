@@ -6,13 +6,13 @@ set :default_stage, "staging"
 require 'capistrano/ext/multistage'
 
 set :application, "ZUAGRO"
-set :repository,  "git@bitbucket.org:fideloyarzo/spa.git"
+set :repository,  "git@github.com:FiDeLio/zuagro.git"
 
 set :scm, :git
 
 set :user, "root"
 
-set :deploy_to, "/home/www/zuagro"
+set :deploy_to, "/var/www/zuagro"
 
 set :use_sudo, false
 
@@ -58,7 +58,7 @@ namespace :assets do
     run_locally "bundle exec rake assets:precompile;"
     servers = find_servers roles: [:app], except: { :no_release => true }
     servers.each do |server|
-      run_locally "rsync  -rave ./public/assets/ #{user}@#{server}:#{current_path}/public/assets/;"
+      run_locally "rsync  -rave  'ssh -i /Users/fidel/.ssh/zuagro' ./public/assets/ #{user}@#{server}:#{current_path}/public/assets/;"
     end
     run_locally "mv public/assets public/__assets"
   end
