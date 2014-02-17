@@ -3,6 +3,8 @@ set :stages, %w(staging production)
 set :default_stage, 'staging'
 require 'capistrano/ext/multistage'
 require 'capistrano-unicorn'
+require 'capistrano/local_precompile'
+
 set :application, 'ZUAGRO'
 
 #server
