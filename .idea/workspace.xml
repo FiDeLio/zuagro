@@ -2,27 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bc2241a-a697-42c2-808a-ef580620c8b5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/fidel.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/unicorn.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/zuagro.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/test.sqlite3" afterPath="$PROJECT_DIR$/db/test.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/deploy.rb" afterPath="$PROJECT_DIR$/config/deploy.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/__assets/manifest-5eb1f0a05f6c90ef1b9cc2ec8bc6cb72.json" afterPath="$PROJECT_DIR$/public/__assets/manifest-5eb1f0a05f6c90ef1b9cc2ec8bc6cb72.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/unicorn.rb" afterPath="$PROJECT_DIR$/config/unicorn.rb" />
     </list>
     <ignored path="zuagro.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="5bc2241a-a697-42c2-808a-ef580620c8b5" time="1392605172672" ignored="false" />
     <file path="/deploy.rb" changelist="5bc2241a-a697-42c2-808a-ef580620c8b5" time="1392605894731" ignored="false" />
     <file path="/Gemfile" changelist="5bc2241a-a697-42c2-808a-ef580620c8b5" time="1392605611144" ignored="false" />
-    <file path="/unicorn.rb" changelist="5bc2241a-a697-42c2-808a-ef580620c8b5" time="1392606296799" ignored="false" />
+    <file path="/unicorn.rb" changelist="5bc2241a-a697-42c2-808a-ef580620c8b5" time="1392606984468" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +49,7 @@
       <file leaf-file-name="unicorn.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/unicorn.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="45" selection-start="1398" selection-end="1398" vertical-scroll-proportion="0.9273021">
+            <state line="14" column="7" selection-start="361" selection-end="361" vertical-scroll-proportion="0.33925685">
               <folding />
             </state>
           </provider>
@@ -488,7 +477,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/unicorn.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="45" selection-start="1398" selection-end="1398" vertical-scroll-proportion="0.9273021">
+        <state line="14" column="7" selection-start="361" selection-end="361" vertical-scroll-proportion="0.33925685">
           <folding />
         </state>
       </provider>

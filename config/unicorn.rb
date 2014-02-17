@@ -8,11 +8,11 @@ listen "/tmp/ccni.socket", :backlog => 64
 preload_app true
 
 user 'root'
-APP_PATH = "/var/www/zuagrocurrent"
+APP_PATH = "/var/www/zuagro/current"
 
 working_directory APP_PATH # available in 0.94.0+
 
-listen 8080, :tcp_nopush => true
+listen 80, :tcp_nopush => true
 
 timeout 20
 
