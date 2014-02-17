@@ -1,40 +1,11 @@
 development:
   adapter: sqlite3
-  database: db/test.sqlite3
+  database: db/development.sqlite3
   pool: 5
-  timeout: 5000
-#  adapter: postgresql
-#  database: spaagro
-#  username: fidel
-#  password: pqr1015
-#  pool: 5
-#  host: 127.0.0.1
-#  port: 5432
-#  encoding: utf8
-#  timeout: 5000
-
-development_p:
-  adapter: postgresql
-  database: spaagro
-  username: postgres
-  password: pqr1015
-  pool: 5
-  host: 127.0.0.1
-  port: 5433
-  encoding: utf8
   timeout: 5000
 
 production:
   adapter: sqlite3
-  database: db/test.sqlite3
+  database: db/production.sqlite3
   pool: 5
   timeout: 5000
-#  adapter: postgresql
-#  database: spaagro
-#  username: fidel
-#  password: pqr1015
-#  pool: 5
-#  host: 127.0.0.1
-#  port: 5432
-#  encoding: utf8
-#  timeout: 5000
