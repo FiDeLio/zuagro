@@ -1,0 +1,74 @@
+<header id="header">
+  <div id="logo-group">
+    <span id="logo">
+      <%= image_tag "logo.png" %>
+    </span>
+  </div>
+  <span id="login-header-space">
+    <span class="hidden-mobile"><%= t('account.help') %></span>
+    <a href="/users/sign_up" class="btn btn-danger"><%= t('account.new') %></a>
+  </span>
+</header>
+<div id="main" role="main">
+  <div id="content" class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm">
+        <h1 class="txt-color-red login-header-big"><%= t('app') %></h1>
+        <div class="hero">
+          <%= render "/shared/login/content" %>
+        </div>
+        <div class="row">
+         <%= render "/shared/login/about" %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
+        <div class="well no-padding smart-form client-form">
+            <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+            <header>
+              <%= t('account.log_in') %>
+              <%= devise_error_messages! %>
+            </header>
+            <fieldset>
+              <section>
+                <label class="label"><%= t('attr.email.label') %></label>
+                <label class="input"> <i class="icon-append fa fa-user"></i>
+                  <%= f.email_field :email, :autofocus => true, required: true, autocomplete: "off" %>
+                  <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> <%= t('attr.email.help') %></b></label>
+              </section>
+              <section>
+                <label class="label"><%= t('attr.password.label') %></label>
+                <label class="input"> <i class="icon-append fa fa-lock"></i>
+                  <%= f.password_field :password, required: true, autocomplete: "off" %>
+                  <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> <%= t('attr.password.help') %></b> </label>
+                <div class="note">
+                  <a href="/users/password/new"><%= t('forgot') %></a>
+                </div>
+              </section>
+              <section>
+                <% if devise_mapping.rememberable? -%>
+                      <label class="checkbox">
+                      <input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1">
+                      <i></i><%= t('account.rember_me') %></label>
+                <% end -%>
+              </section>
+            </fieldset>
+            <footer>
+              <button type="submit" class="btn btn-primary">
+                Conectarse
+              </button>
+            </footer>
+          <% end %>
+        </div>
+        <h5 class="text-center"><%= t('other_account') %></h5>
+        <ul class="list-inline text-center">
+          <li>
+            <a href="javascript:void(0);" class="btn btn-primary btn-circle"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" class="btn btn-info btn-circle"><i class="fa fa-twitter"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

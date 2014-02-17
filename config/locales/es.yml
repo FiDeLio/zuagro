@@ -1,0 +1,11 @@
+es:
+  app: Zuagro
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              taken: ""
+          password_confirmation:
+            confirmation: ""

@@ -1,0 +1,76 @@
+<header id="header">
+  <div id="logo-group">
+    <span id="logo">
+      <%= image_tag "logo.png" %>
+    </span>
+  </div>
+  <span id="login-header-space"> <span class="hidden-mobile"><%= t('account.registrated') %></span> <a href="/users/sign_in" class="btn btn-danger"><%= t('account.log_in') %></a> </span>
+</header>
+<div id="main" role="main">
+  <div id="content" class="container">
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm">
+        <h1 class="txt-color-red login-header-big"><%= t('app') %></h1>
+        <div class="hero">
+            <%= render "/shared/login/content" %>
+        </div>
+        <div class="row">
+          <%= render "/shared/login/about" %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
+        <div class="well no-padding smart-form client-form">
+            <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+            <header>
+              <%= t('registration.free') %>
+              <%= devise_error_messages! %>
+            </header>
+
+            <fieldset>
+              <section>
+                <label class="input"> <i class="icon-append fa fa-user"></i>
+                  <%= f.email_field :email, :autofocus => true %>
+                  <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> <%= t('registration.email') %></b></label>
+              </section>
+              <section>
+                <label class="input"> <i class="icon-append fa fa-lock"></i>
+                  <%= f.password_field :password %>
+                  <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> <%= t('registration.password') %></b> </label>
+              </section>
+              <section>
+                <label class="input"> <i class="icon-append fa fa-lock"></i>
+                  <%= f.password_field :password_confirmation %>
+                  <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> <%= t('registration.password_rep') %></b> </label>
+              </section>
+              <section>
+                <label class="checkbox">
+<!--                  <input type="checkbox" name="subscription" id="subscription">
+                  <i></i>I want to receive news and special offers</label>
+                <label class="checkbox"> -->
+                  <input type="checkbox" name="terms" id="terms">
+                  <i></i><%= t('registration.terms') %> <a href="#" data-toggle="modal" data-target="#myModal"> <%= t('registration.conditions') %> </a></label>
+              </section>
+            </fieldset>
+            <footer>
+              <button type="submit" class="btn btn-primary">
+                <%= t('registration.name') %>
+              </button>
+            </footer>
+          <% end %>
+        </div>
+
+        <h5 class="text-center"> <%= t('other_account') %></h5>
+
+        <ul class="list-inline text-center">
+          <li>
+            <a href="javascript:void(0);" class="btn btn-primary btn-circle"><i class="fa fa-facebook"></i></a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "/shared/login/term_conditions" %>

@@ -1,0 +1,42 @@
+<header id="header">
+  <div id="logo-group">
+    <span id="logo">
+      <%= image_tag "logo.png" %>
+    </span>
+  </div>
+  <span id="login-header-space">
+    <span class="hidden-mobile"><%= t('account.registrated') %></span>
+    <a href="/users/sign_in" class="btn btn-danger"><%= t('account.log_in') %></a>
+  </span>
+</header>
+<div id="main" role="main">
+  <div id="content" class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8">
+        <h2><%= t('change_your_password') %></h2>
+        <h1 class="txt-color-red login-header-big"><%= t('attr.email.label') %></h1>
+        <div class="no-padding smart-form client-form">
+          <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+              <%= f.hidden_field :reset_password_token %>
+              <section>
+                <label class="input"> <i class="icon-append fa fa-lock"></i>
+                  <%= f.password_field :password %>
+                  <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> <%= t('registration.password') %></b> </label>
+              </section>
+              <section>
+                <label class="input"> <i class="icon-append fa fa-lock"></i>
+                  <%= f.password_field :password_confirmation %>
+                  <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> <%= t('registration.password_rep') %></b> </label>
+              </section>
+
+              <footer>
+                <button type="submit" class="btn btn-primary">
+                  <%= t('change_password') %>
+                </button>
+              </footer>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

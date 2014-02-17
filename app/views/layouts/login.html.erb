@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Login - Zuagro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <%= stylesheet_link_tag "application" %>
+  <%= stylesheet_link_tag "login" %>
+  <%= csrf_meta_tag %>
+  <%= favicon_link_tag 'admin/favicon/favicon.ico' %>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+    <body id="login" class="animated fadeInDown">
+        <%= yield %>
+        <%= javascript_include_tag "application" %>
+        <%= javascript_include_tag "login" %>
+    </body>
+</html>

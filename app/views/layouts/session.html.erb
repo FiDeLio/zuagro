@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Zuagro</title>
+  <%= favicon_link_tag 'admin/favicon/favicon.ico' %>
+  <%= stylesheet_link_tag "application" %>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+  <%= csrf_meta_tag %>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+    <%= render '/shared/session/header' %>
+
+    <%= render 'shared/session/navegation' %>
+
+    <!-- MAIN PANEL -->
+    <div id="main" role="main">
+
+      <!-- RIBBON -->
+      <%= render 'shared/session/ribbon' %>
+      <!-- END RIBBON -->
+
+      <!-- MAIN CONTENT -->
+      <div id="content">
+        <%= yield %>
+      </div>
+      <!-- END CONTENT -->
+
+      <!-- SHORTCUT AREA : With large tiles (activated via clicking user name tag)
+        Note: These tiles are completely responsive,
+        you can add as many as you like
+      -->
+      <%= render 'shared/session/shortarea' %>
+      <!-- END SHORTCUT AREA-->
+
+    </div>
+    <!-- END MAIN PANEL -->
+
+<%= javascript_include_tag "application" %>
+<%= yield :javascripts %>
+
+</body>
+</html>

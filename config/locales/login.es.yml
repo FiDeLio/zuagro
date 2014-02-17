@@ -1,0 +1,43 @@
+es:
+  content: Servicio de lectura y análisis de suelos, recomendación  para cultivos, aplicación apps para smartphone - Georeferencia  gratuita, monitoreo a distancia
+  about:
+    title: Acerca Zuagro - ¿Estás al día?
+    content: Hemos creado una sencilla forma de administrar y futuras tomas de desiciones, <em>Zuagro</em> Moblie y <em>Zuagro</em> Web, estas dos plataformas trabajando conjuntamente hemos logrado en crear una aplicación robusta y bastante util para el agricultor. donde podra ver analisis de terreno que el ha realizado, obtener recomendaciones, graficos, plantillas, georeferenciacion de sus predios entre otro. para mas información <a href="mailto:contacto@zuagro.com">Contactenos</a>
+  solution:
+    title: Solución agricola
+    content: La fertilización de los cultivos debe ser consecuencia de algún tipo análisis proximal de nutrirntes (Análisis de suelo), para esto existe Zuagro donde ayudará al agricultor en tomar desiciones por un camino correcto, junto con el equipo de análisis podremos colaborar con inovadoras soliciones personalizadas.
+  demonstration: Demostración
+  download: Descargar
+  attr:
+    email:
+      label: E-mail
+      help: Por favor, introduzca la dirección de correo electrónico
+    password:
+      label: Contraseña
+      help: Introduzca su contraseña
+  forgot: ¿Has olvidado tu contraseña?
+  account:
+    log_in: Iniciar la sesión
+    help: ¿Necesitas una cuenta?
+    new: CREATE UNA CUENTA
+    rember_me: Quedar conectado
+    registrated: ¿Ya se ha registrado?
+  conect: Conectarse
+  restore: Restablecer mi contraseña
+  resend: Vuelva a enviar instrucciones de confirmación
+  title_restore: Vuelva a enviar instrucciones de confirmación
+  other_account: O conéctate usando
+  change_password: Cambiar clave
+  change_your_password: Change your password
+  registration:
+    email: Ingrese un correo válido
+    password: Ingrese una clave de 6 caracteres como mínimo.
+    password_rep: Repita la misma clave introducida.
+    terms: Estoy de acuerdo con los Términos y
+    conditions: Condiciones
+    name: Registrarse
+    free: El registro es GRATIS*
+  term_conditions:
+    name: Terminos & Condiciones
+    title: AGROCL TERMINOS Y CONDICIONES.
+

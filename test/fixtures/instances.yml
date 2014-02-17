@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company_id: 
+  json: MyText
+  version: 1.5
+  device_id: 
+
+two:
+  company_id: 
+  json: MyText
+  version: 1.5
+  device_id: 

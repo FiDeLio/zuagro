@@ -1,0 +1,15 @@
+<%
+   photo = 'avatars/' + current_user.id.to_s + '/avatar.jpg';
+   file = Rails.root.join('app', 'assets', 'images', 'avatars', current_user.id.to_s, 'avatar.jpg')
+   unless File.exists?(file)
+     photo = 'avatars/photo.jpg'
+   end
+%>
+<div class="login-info">
+    <span> <!-- User image size is adjusted inside CSS, it should stay as it -->
+        <%= image_tag photo, class: 'online' %>
+        <a href="javascript:void(0);" id="show-shortcut">
+          <%= current_user.name %> <i class="fa fa-angle-down"></i>
+        </a>
+    </span>
+</div>
