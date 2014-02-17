@@ -2,15 +2,15 @@
 set :stages, %w(staging production)
 set :default_stage, "staging"
 
-
 require 'capistrano/ext/multistage'
+require 'capistrano-unicorn'
 
 set :application, "ZUAGRO"
 set :repository,  "git@github.com:FiDeLio/zuagro.git"
 
 set :scm, :git
 
-set :user, "root"
+set :user, "zuagro"
 
 set :deploy_to, "/var/www/zuagro"
 
@@ -23,8 +23,11 @@ set :unicorn_pid, "#{current_path}/tmp/pids/unicorn.pid"
 
 #ssh_options[:keys] = ["~/.ssh/ccni_key.pem"]
 
-after "deploy:restart", "unicorn:restart"
 after "deploy:create_symlink", "assets:precompile"
+
+after 'deploy:restart', 'unicorn:reload'    # app IS NOT preloaded
+after 'deploy:restart', 'unicorn:restart'   # app preloaded
+after 'deploy:restart', 'unicorn:duplicate'
 
 # Unicorn
 namespace :unicorn do

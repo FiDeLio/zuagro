@@ -7,7 +7,7 @@ listen "/tmp/zuagro.socket", :backlog => 64
 
 preload_app true
 
-user 'root'
+user 'zuagro'
 APP_PATH = "/var/www/zuagro/current"
 
 working_directory APP_PATH # available in 0.94.0+
