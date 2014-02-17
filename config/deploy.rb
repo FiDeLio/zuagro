@@ -5,18 +5,24 @@ set :default_stage, "staging"
 require 'capistrano/ext/multistage'
 require 'capistrano-unicorn'
 
-set :application, "ZUAGRO"
-set :repository,  "git@github.com:FiDeLio/zuagro.git"
 
+
+
+set :application, "ZUAGRO"
+
+
+#git
+set :repository,  "git@github.com:FiDeLio/zuagro.git"
+set :branch, "master"
 set :scm, :git
 
+#server
 set :user, "zuagro"
-
 set :deploy_to, "/var/www/zuagro"
-
 set :use_sudo, false
 
-set :deploy_via, :copy
+
+set :deploy_via, :remote_cache
 set :copy_exclude, [".git"]
 set :ssh_options, forward_agent: true
 set :unicorn_pid, "#{current_path}/tmp/pids/unicorn.pid"
