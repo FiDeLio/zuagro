@@ -25,6 +25,5 @@ group :development do
   gem 'capistrano', '~> 2.15.5'
   gem 'capistrano-rbenv', '~> 1.0.5'
   gem 'capistrano-unicorn', '~> 0.2.0', require: false
-  gem 'capistrano-local-precompile', require: false
   gem 'foreman'
 end
