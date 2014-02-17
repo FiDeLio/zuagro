@@ -8,6 +8,8 @@ Bundler.require(:default, Rails.env)
 
 module Spagro
   class Application < Rails::Application
+    config.assets.enabled = true
+    config.assets.compress = true
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
     config.assets.paths << Rails.root.join('app', 'assets', 'texts')
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif  *.svg *.eot *.woff *.ttf)

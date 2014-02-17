@@ -23,7 +23,7 @@ ssh_options[:forward_agent] = true
 ssh_options[:keys] = ['~/.ssh/zuagro']
 
 after "deploy:restart", "unicorn:restart"
-after "deploy:create_symlink"
+after "deploy:create_symlink", "assets:precompile"
 
 before  'deploy:assets:precompile', 'deploy:migrate'
 
