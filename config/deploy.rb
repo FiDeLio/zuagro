@@ -12,4 +12,5 @@ set :branch, 'master'
 set :scm, :git
 set :repository_cache, 'git_cache'
 set :deploy_via, :remote_cache
+set :ssh_options, { :forward_agent => true }
 
