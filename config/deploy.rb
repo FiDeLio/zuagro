@@ -8,7 +8,7 @@ set :application, 'ZUAGRO'
 
 #server
 set :user, 'zuagro'
-set :deploy_to, '/var/www/zuagro'
+set :deploy_to, '/home/ubuntu/apps/zuagro.com'
 set :use_sudo, false
 
 #git
@@ -21,7 +21,7 @@ set :deploy_via, :remote_cache
 set :unicorn_pid, "#{current_path}/tmp/pids/unicorn.pid"
 
 ssh_options[:forward_agent] = true
-ssh_options[:keys] = ['~/.ssh/zuagro']
+ssh_options[:keys] = ['~/.ssh/zuagro.pem']
 
 after "deploy:restart", "unicorn:restart"
 after "deploy:create_symlink", "assets:precompile"
@@ -60,7 +60,7 @@ namespace :assets do
     run_locally "bundle exec rake assets:precompile;"
     servers = find_servers roles: [:app], except: { :no_release => true }
     servers.each do |server|
-      run_locally "rsync  -rave 'ssh -i /Users/fidel/.ssh/zuagro'   ./public/assets/ #{user}@#{server}:#{current_path}/public/assets/;"
+      run_locally "rsync  -rave 'ssh -i /Users/fidel/.ssh/zuagro.pem'   ./public/assets/ #{user}@#{server}:#{current_path}/public/assets/;"
     end
     run_locally "mv public/assets public/__assets"
   end

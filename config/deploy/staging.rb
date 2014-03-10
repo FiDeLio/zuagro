@@ -1,1 +1,1 @@
-role :app, '192.81.214.51', primary: true
+role :app, '54.84.110.100', primary: true
