@@ -7,7 +7,7 @@ require 'capistrano-unicorn'
 set :application, 'ZUAGRO'
 
 #server
-set :user, 'zuagro'
+set :user, 'ubuntu'
 set :deploy_to, '/home/ubuntu/apps/zuagro.com'
 set :use_sudo, false
 
@@ -27,6 +27,8 @@ after "deploy:restart", "unicorn:restart"
 after "deploy:create_symlink", "assets:precompile"
 
 before  'deploy:assets:precompile', 'deploy:migrate'
+before "deploy:restart", "bundle:install"
+
 
 # Unicorn
 namespace :unicorn do
@@ -49,6 +51,16 @@ namespace :unicorn do
   task :stop, except: { no_release: true } do
     run "if [ -f #{unicorn_pid} ]; then kill -s QUIT `cat #{unicorn_pid}` ; fi"
   end
+end
+
+
+namespace :bundle do
+
+  desc "run bundle install and ensure all gem requirements are met"
+  task :install do
+    run "cd #{current_path} && bundle install  --without=test --no-update-sources"
+  end
+
 end
 
 

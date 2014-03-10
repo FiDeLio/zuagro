@@ -2,13 +2,13 @@ env = ENV["RAILS_ENV"] || "development"
 
 # Use at least one worker per core if you're on a dedicated server,
 # more will usually help for _short_ waits on databases/caches.
-worker_processes 4
+worker_processes 5
 listen "/tmp/zuagro.socket", :backlog => 64
 
 preload_app true
 
-user 'zuagro'
-APP_PATH = "/var/www/zuagro/current"
+user 'ubuntu'
+APP_PATH = "/home/ubuntu/apps/zuagro.com/current"
 
 working_directory APP_PATH # available in 0.94.0+
 
