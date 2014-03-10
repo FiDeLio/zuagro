@@ -27,7 +27,7 @@ after "deploy:restart", "unicorn:restart"
 after "deploy:create_symlink", "assets:precompile"
 
 before  'deploy:assets:precompile', 'deploy:migrate'
-before "deploy:restart", "bundle:install"
+
 
 
 # Unicorn
@@ -53,16 +53,17 @@ namespace :unicorn do
   end
 end
 
-
-namespace :bundle do
-
-  desc "run bundle install and ensure all gem requirements are met"
-  task :install do
-    run "cd #{current_path} && bundle install  --without=test --no-update-sources"
-  end
-
-end
-
+#
+#before "deploy:restart", "bundle:install"
+#namespace :bundle do
+#
+#  desc "run bundle install and ensure all gem requirements are met"
+#  task :install do
+#    run "cd #{current_path} && bundle install  --without=test --no-update-sources"
+#  end
+#
+#end
+#
 
 # Assets
 namespace :assets do
