@@ -27,7 +27,7 @@ Devise.setup do |config|
       :enable_starttls_auto => true
   }
 
-  ActionMailer::Base.default_url_options[:host] = "zuagro.com"
+  ActionMailer::Base.default_url_options[:host] = "54.84.110.100" # "zuagro.com"
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is

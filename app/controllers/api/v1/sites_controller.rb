@@ -30,7 +30,8 @@ class Api::V1::SitesController < Api::V1::TokenAuthController
       list << {
           id: s[:id],
           name: s[:name],
-          created_at: s[:created_at]
+          created_at: s[:created_at],
+          comments: s[:comments]
       }
     }
     render status: 200,
@@ -39,11 +40,18 @@ class Api::V1::SitesController < Api::V1::TokenAuthController
            }
   end
   def update
-    sites = Site.update(params[:id], { name: params[:params][:name], comments: params[:params][:comments]})
+    sites = Site.update(params[:id], { name: params[:name], comments: params[:comments]})
     status = 400
     status = 200 if sites
-     render status: status,
-            json: { }
+    render status: status,
+           json: { }
+  end
+  def destroy
+    site = Site.delete(params[:id])
+    status = 400
+    status = 200 if site
+    render status: status,
+           json: { }
   end
   def coordenates
     items_site = ItemsSite.where(site_id: params[:site_id]).order(:ts)

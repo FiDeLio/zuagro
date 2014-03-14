@@ -1,7 +1,9 @@
+#map-canvas img{
+    max-width: none;
+}
 #map-canvas{
     height: 600px;
 }
-
 #table-sites > tbody > tr > td > .fa {
     cursor: pointer;
 }

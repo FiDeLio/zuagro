@@ -33,7 +33,17 @@ var Sites = {
                 data: params,
                 complete: function(response) {
                     if(response.status == 200){
-                        console.log(response);
+                        $('#alert-success').text('registro actualizado.');
+                        $('#alert-success').parent().show();
+                        setTimeout(function(){
+                            $('#alert-success').parent().fadeOut();
+                        },3000);
+                    }else{
+                        $('#alert-danger').text('en estos momentos no es posible actualizar el registro.');
+                        $('#alert-danger').parent().show();
+                        setTimeout(function(){
+                            $('#alert-danger').parent().fadeOut();
+                        },3000);
                     }
                 }
             });
@@ -81,11 +91,50 @@ var Sites = {
                 var json = response.responseJSON;
                 var sites = json.list;
                 for(var i=0; i < sites.length; i++){
-                    $('#table-sites > tbody').append('<tr data-object="'+ sites[i].id +'"></tr>');
+                    $('#table-sites > tbody').append('<tr data-object="'+ sites[i].id +'"  data-comments="'+ sites[i].comments +'"></tr>');
                     $('#table-sites > tbody > tr:last').append('<td>'+ sites[i].name +'</td> <td>'+ sites[i].created_at +'</td> <td class="text-center"><i class="fa fa-map-marker"></i></td><td class="text-center"><i class="fa fa-times"></i></td>');
                 }
                 _this.bind_sites();
+                _this.bind_delete();
             }
+        });
+    },
+    bind_delete: function(){
+        var _this = this;
+        var $delete = $('#table-sites > tbody > tr > td > .fa.fa-times');
+        $delete.bind('click', function(){
+            var $this = $(this);
+            var object = $this.parents('tr').data('object');
+            var url = '/api/v1/sites/' + object;
+            $.SmartMessageBox({
+                title : "<i class='fa fa-times txt-color-red'></i> ¿ Desea eliminar este registro ?",
+                content : "Nombre: <span class='txt-color-orangeDark'><strong>" + $this.parents('tr').children('td').first().text() + "</strong></span>",
+                buttons : '[No][Si]'
+            }, function(ButtonPressed) {
+                if (ButtonPressed == "Si") {
+                    $.ajax({
+                        url: url,
+                        type: 'DELETE',
+                        complete: function(response) {
+                            if(response.status == 200){
+                                $('#alert-success').text('registro eliminado.');
+                                $('#alert-success').parent().show();
+                                setTimeout(function(){
+                                    $('#alert-success').parent().fadeOut();
+                                },3000);
+                                $this.parents('tr').remove();
+                            }else{
+                                $('#alert-danger').text('en estos momentos no es posible eliminar el registro.');
+                                $('#alert-danger').parent().show();
+                                setTimeout(function(){
+                                    $('#alert-danger').parent().fadeOut();
+                                },3000);
+                            }
+                        }
+                    });
+                }
+
+            });
         });
     },
     bind_sites: function(){
@@ -93,7 +142,8 @@ var Sites = {
         var $show = $('#table-sites > tbody > tr > td > .fa.fa-map-marker');
         $show.bind('click', function(e){
             var $this = $(this);
-            var object = $this.parents('tr').data('object')
+            var object = $this.parents('tr').data('object');
+            var comments = $this.parents('tr').data('comments');
             var url = '/api/v1/sites/coordenates?site_id=' + object; //+ '&accuracy=' + $('#sites-accuracy').val();
             var d = new Date($this.parents('tr').children('td').next().first().text());
             var curr_date = d.getDate();
@@ -104,6 +154,7 @@ var Sites = {
             $('#object').val(object);
             $('#lbl-sites-date').text(curr_date + "-" + curr_month + "-" + curr_year + " " + curr_hour + ":" + curr_minutes);
             $('#sites-name').val($this.parents('tr').children('td').first().text());
+            $('#sites-comments').val(comments);
             _this.stop_animate();
             _this.reset_polyline();
             $.getJSON(url).complete(function(response){

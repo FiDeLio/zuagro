@@ -15,3 +15,7 @@
 //= require ./admin/app
 
 //= require ajax/account
+
+$('.close').bind('click', function(){
+    $(this).parent().fadeOut(300);
+});
