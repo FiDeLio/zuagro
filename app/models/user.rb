@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :token_authenticatable
   belongs_to :role
-
+  has_many :sites
+  has_many :instances
   def skip_confirmation!
     self.confirmed_at = Time.now
   end

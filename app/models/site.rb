@@ -1,4 +1,4 @@
 class Site < ActiveRecord::Base
-  belongs_to :company
-  attr_accessible :company, :name, :activated
+  belongs_to :user
+  attr_accessible :name, :activated, :user_id
 end

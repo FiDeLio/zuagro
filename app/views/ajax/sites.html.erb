@@ -1,0 +1,18 @@
+<%= stylesheet_link_tag "ajax/sites" %>
+
+<div class="row">
+  <div class="col-lg-5">
+    <div class="col-lg-12">
+        <%= render "ajax/form_site" %>
+    </div>
+    <div class="col-lg-12">
+        <%= render "ajax/table_site" %>
+    </div>
+  </div>
+  <div class="col-lg-7">
+    <div id="map-canvas" class="well"></div>
+  </div>
+</div>
+
+
+<%= javascript_include_tag "ajax/sites" %>

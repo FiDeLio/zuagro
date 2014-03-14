@@ -1,7 +1,7 @@
 <header id="header">
   <div id="logo-group">
     <span id="logo">
-      <%= image_tag "logo.png" %>
+      <h1 class="txt-color-red login-header-big"><%= t('app') %></h1>
     </span>
   </div>
   <span id="login-header-space"> <span class="hidden-mobile"><%= t('account.registrated') %></span> <a href="/users/sign_in" class="btn btn-danger"><%= t('account.log_in') %></a> </span>
@@ -11,7 +11,6 @@
 
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm">
-        <h1 class="txt-color-red login-header-big"><%= t('app') %></h1>
         <div class="hero">
             <%= render "/shared/login/content" %>
         </div>
@@ -59,14 +58,6 @@
             </footer>
           <% end %>
         </div>
-
-        <h5 class="text-center"> <%= t('other_account') %></h5>
-
-        <ul class="list-inline text-center">
-          <li>
-            <a href="javascript:void(0);" class="btn btn-primary btn-circle"><i class="fa fa-facebook"></i></a>
-          </li>
-        </ul>
 
       </div>
     </div>

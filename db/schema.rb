@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140213140721) do
+ActiveRecord::Schema.define(version: 20140313235853) do
 
   create_table "companies", force: true do |t|
     t.string   "name"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20140213140721) do
     t.integer  "device_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   add_index "instances", ["company_id"], name: "index_instances_on_company_id"
@@ -70,6 +71,9 @@ ActiveRecord::Schema.define(version: 20140213140721) do
     t.datetime "ts"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "accuracy"
+    t.float    "altitude"
+    t.float    "bearing"
   end
 
   add_index "items_sites", ["site_id"], name: "index_items_sites_on_site_id"
@@ -111,6 +115,8 @@ ActiveRecord::Schema.define(version: 20140213140721) do
     t.boolean  "activated"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.text     "comments"
   end
 
   add_index "sites", ["company_id"], name: "index_sites_on_company_id"

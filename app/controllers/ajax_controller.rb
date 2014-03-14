@@ -1,8 +1,11 @@
 class AjaxController < SessionController
-  def dashboard
+  def sites
     render layout: nil
   end
-  def grid
+  def fertilizers
+    render layout: nil
+  end
+  def mixtures
     render layout: nil
   end
 end

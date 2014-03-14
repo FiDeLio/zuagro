@@ -1,0 +1,46 @@
+<input type="hidden" id="object">
+<div class="form-horizontal well">
+  <fieldset>
+    <!-- Form Name -->
+    <legend>Predios</legend>
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-5 control-label" for="sel-predios">Nombre del predio</label>
+      <div class="col-md-5">
+        <input type="text" class="input-xs" id="sites-name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-5 control-label">Fec. de transmición</label>
+      <div class="col-md-5">
+        <div id="lbl-sites-date"></div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-5 control-label">Presición <= </label>
+      <div class="col-md-5">
+        <input type="number" min="1" id="sites-accuracy" class="input-xs" value="30">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-5 control-label">Tipo de mapa</label>
+      <div class="col-md-5">
+        <div class="btn-group" data-toggle="buttons">
+          <label id="btn-line" class="btn btn-default"><input type="radio" name="options" id="1">Linea</label>
+          <label id="btn-area" class="btn btn-default"><input type="radio" name="options" id="2">Area</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-12 text-center">
+        <label class="col-md-5 control-label">&nbsp;</label>
+            <textarea rows="3" id="sites-comments" placeholder="Informacion Adicional"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-success" id="btn-save">Guardar como nuevo</button>
+        <button class="btn btn-primary" id="btn-update">Actualizar</button>
+    </div>
+  </fieldset>
+</div>

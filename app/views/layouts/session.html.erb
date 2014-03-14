@@ -7,6 +7,7 @@
   <%= favicon_link_tag 'admin/favicon/favicon.ico' %>
   <%= stylesheet_link_tag "application" %>
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
   <%= csrf_meta_tag %>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
@@ -38,9 +39,9 @@
 
     </div>
     <!-- END MAIN PANEL -->
+    <input type="hidden" value="<%= current_user.authentication_token %>" id="token">
+    <%= javascript_include_tag "application" %>
 
-<%= javascript_include_tag "application" %>
-<%= yield :javascripts %>
-
+    <%= yield :javascripts %>
 </body>
 </html>

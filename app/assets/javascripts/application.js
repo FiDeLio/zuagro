@@ -1,5 +1,5 @@
 //= require jquery
-//= require ./admin//plugin/pace/pace.min
+//= require ./admin/plugin/pace/pace.min
 //= require ./admin/jquery-ui.min
 //= require ./admin/bootstrap/bootstrap.min
 //= require ./admin/notification/SmartNotification.min
@@ -14,4 +14,4 @@
 //= require ./admin/plugin/smartclick/smartclick
 //= require ./admin/app
 
-//= require account
+//= require ajax/account
